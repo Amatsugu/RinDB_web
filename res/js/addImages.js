@@ -6,7 +6,7 @@ $(document).ready(function()
 	{
 		img = card.clone();
 		img.appendTo("#contentGrid").children(".name").text("Image " + i);
-		img.find("img").attr("src", "_res/img/imgtest"+((i%14)+1)+".jpg");
+		img.find("img").attr("src", "res/img/imgtest"+((i%14)+1)+".jpg");
 	}
 	var item = $(".inputArea");
 	for(var i = 0; i < 20; i ++)
