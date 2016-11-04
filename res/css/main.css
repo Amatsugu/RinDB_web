@@ -47,11 +47,6 @@ body
 	box-shadow: 0px 5px 5px #ccc;
 }
 
-#content
-{
-	
-}
-
 #wrapper #search
 {
 	height: 45px;
@@ -106,7 +101,7 @@ body
 	width: 20px;
 	background-color: #fff;
 	border: 1px solid #fff;
-	transition: border, background-color .5s;
+	transition: border .5s, background-color .5s;
 }
 
 .inputArea input[type="checkbox" i]:hover
@@ -129,12 +124,12 @@ body
 	border-right: 15px solid #333;
 	border-top: 10px solid transparent; 
 	margin-left: 15px;
-	transition: border-top, transform .1s;
+	transition: border-right .5s, transform .1s;
 }
 
 #searchWrap #advancedSearchButton:hover
 {
-	border-right: 15px solid #aaa;
+	border-right: 15px solid #ff0064;
 }
 
 
@@ -143,23 +138,33 @@ body
 	-webkit-appearance: textfield;
 	height: 40px;
 	border: 1px solid #ddd;
-	transition: border, color .5s;
+	transition: border .5s, color .5s;
 	font-size: 30px;
 	color: #ddd;
 	width: 100%;
+	outline: none;
 	padding-left: 5px;
 	padding-right: 5px;
 }
 
 #search input[type="search" i]:hover
 {
-	border: 1px solid #aaa;
+	-webkit-appearance: textfield;
+	border: 1px solid #ff0064;
+	color: #000;
+}
+
+#search input[type="search" i]:selected
+{
+	-webkit-appearance: textfield;
+	border: 1px solid #ff0064;
 	color: #000;
 }
 
 #search input[type="search" i]:focus
 {
-	border: 1px solid #aaa;
+	-webkit-appearance: textfield;
+	border: 1px solid #ff0064;
 	color: #000;
 }
 
@@ -182,7 +187,7 @@ body
 	display: block;
 	box-shadow: 0px 5px 5px #ccc;
 	border: 2px solid rgba(255,0,100,0);
-	transition: box-shadow, border .5s;
+	transition: box-shadow .5s, border .5s;
 	overflow: hidden;
 	margin-bottom: 20px;
 }

@@ -1,6 +1,12 @@
+var search;
+var content;
+
 $(document).ready(function()
 {
-	var search = $("#search");
+	search = $("#search");
+	content = $("#contentGrid");
+	search.on("propertychange change click keyup input paste submit",Search);
+	//Advanced Search
 	var arrow = $("#advancedSearchButton");
 	arrow.on("click", function()
 	{
@@ -16,3 +22,18 @@ $(document).ready(function()
 		}
 	});
 });
+
+function Search(event)
+{
+	event.preventDefault();
+	var query = $("input[type=search]").val();
+	var cards = content.find(".imageCard");
+	if(query.length == 0)
+	{
+		cards.fadeIn();
+		return;
+	}
+	//alert(query);
+	cards.hide();
+	cards.find("div:contains('"+query+"')").parent().show();
+}
