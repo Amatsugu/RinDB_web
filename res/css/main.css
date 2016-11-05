@@ -33,6 +33,11 @@ body
 }
 
 
+#Logo a
+{
+	color: #ff0064;
+}
+
 #Logo a:visited
 {
 	color: #ff0064;
