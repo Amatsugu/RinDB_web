@@ -14,7 +14,7 @@ body
 	background-color: #222;
 }
 
-#contentGrid a.imageCard
+a.imageCard
 {
 	box-shadow: 0px 5px 5px #111;
 	background-color: #333;
@@ -30,7 +30,7 @@ body
 	color: #fff;
 }
 
-#contentGrid .imageCard:hover
+.imageCard:hover
 {
 	box-shadow: 0px 5px 8px #000;
 }
@@ -74,4 +74,18 @@ body
 ::-webkit-scrollbar
 {
 	background-color: #444;
+}
+
+#imageContent #imageDescription
+{
+	color: #fff;
+}
+
+#imageContent #imageName
+{
+	color: #fff;
+}
+#imageContent #imageRelated
+{
+	color: #fff;
 }

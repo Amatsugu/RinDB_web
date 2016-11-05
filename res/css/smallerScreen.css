@@ -1,4 +1,4 @@
-#contentGrid a.imageCard
+a.imageCard
 {
 	height: calc(200px + 20px);
 	width: 200px;
@@ -20,7 +20,7 @@
 	line-height: 20px;
 }
 
-#contentGrid .imageCard:hover > .image img
+.imageCard:hover > .image img
 {
 	max-width: calc(200px + 10%);
 }

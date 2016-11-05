@@ -5,7 +5,8 @@ $(document).ready(function()
 {
 	search = $("#search");
 	content = $("#contentGrid");
-	search.on("propertychange change click keyup input paste submit",Search);
+	//Seach Feild
+	search.on("propertychange change click keyup input paste submit", Search);
 	//Advanced Search
 	var arrow = $("#advancedSearchButton");
 	arrow.on("click", function()
@@ -33,7 +34,6 @@ function Search(event)
 		cards.fadeIn();
 		return;
 	}
-	//alert(query);
 	cards.hide();
 	cards.find("div:contains('"+query+"')").parent().show();
 }

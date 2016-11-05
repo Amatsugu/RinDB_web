@@ -1,0 +1,42 @@
+#imageContent
+{
+	display: block;
+}
+
+#imageContent #imageName
+{
+	height: 50px;
+	line-height: 50px;
+	font-size: 30px;
+	padding: 10px;
+	color: #000;
+}
+
+#imageContent #imageDisplay
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: flex-start;
+}
+
+#imageDisplay img
+{
+	width: 100%;
+	align-self: flex-start;
+}
+
+#imageContent #imageDescription
+{
+	color: #000;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+#imageContent #imageRelated
+{
+	padding: 20px;
+	font-size: 30px;
+	line-height: 35px;
+	color: #000;
+}

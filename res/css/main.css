@@ -32,6 +32,13 @@ body
 	padding-right: 15px;
 }
 
+
+#Logo a:visited
+{
+	color: #ff0064;
+}
+
+
 #Header #Subtitle
 {
 	height: 80px;
@@ -166,80 +173,6 @@ body
 	-webkit-appearance: textfield;
 	border: 1px solid #ff0064;
 	color: #000;
-}
-
-#contentGrid
-{
-	display: flex;
-	flex-grow: 1;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	margin-left: 60px;
-	margin-right: 60px;
-}
-
-
-#contentGrid a.imageCard
-{
-	position: relative;
-	height: 296px;
-	width: 256px;
-	display: block;
-	box-shadow: 0px 5px 5px #ccc;
-	border: 2px solid rgba(255,0,100,0);
-	transition: box-shadow .5s, border .5s;
-	overflow: hidden;
-	margin-bottom: 20px;
-}
-
-#contentGrid .imageCard:hover
-{
-	box-shadow: 0px 5px 8px #aaa;
-	border: 2px solid rgba(255,0,100,1);
-}
-
-
-.imageCard .image
-{
-	position: absolute;
-	display: flex;
-	flex-direction:column;
-	justify-content: center;
-	align-content: center;
-	height: 256px;
-	width: 256px;
-	background-color: #333;
-	float: left;
-	clear: both;
-	top: 0px;
-	overflow: hidden;
-}
-
-#contentGrid .imageCard:hover > .image img
-{
-	max-width: calc(256px + 10%);
-}
-
-.image img
-{
-	align-self: center;
-	max-width: 256px;
-	position: absolute;
-	transition: max-width .5s;
-}
-
-.imageCard .name
-{
-	top:256px;
-	display: block;
-	position: relative;
-	height: 40px;
-	width: 256px;
-	text-align: center;
-	line-height: 40px;
-	color: #000;
-	text-decoration: none;
-	transition: color .5s;
 }
 
 a
