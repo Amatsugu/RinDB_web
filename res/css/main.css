@@ -148,6 +148,7 @@ body
 #searchWrap input[type="search" i]
 {
 	-webkit-appearance: textfield;
+	-webkit-border-radius: 0;
 	height: 40px;
 	border: 1px solid #ddd;
 	transition: border .5s, color .5s;
@@ -178,6 +179,13 @@ body
 	-webkit-appearance: textfield;
 	border: 1px solid #ff0064;
 	color: #000;
+}
+
+.searching
+{
+	color: #fff;
+	font-size: 25px;
+	height: 100%;
 }
 
 a
