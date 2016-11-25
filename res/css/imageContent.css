@@ -10,6 +10,7 @@
 	font-size: 30px;
 	padding: 10px;
 	color: #000;
+	overflow: hidden;
 }
 
 #imageContent #imageDisplay
@@ -43,4 +44,40 @@
 
 #contentGrid
 {
+}
+
+.tag
+{
+	overflow: hidden;
+	display: inline-flex;
+	border: 1px solid #fff;
+	height: 25px;
+	margin: 5px;
+	padding: 5px;
+	background-color: #fff;
+	justify-content: space-around;
+	transition: background-color .5s;
+}
+
+.tag:hover
+{
+	background-color: #efefef;
+	cursor: default;
+}
+
+.tag .tagName
+{
+	display: block;
+	align-self: center;
+	
+}
+
+#tagDescription
+{
+	position: absolute;
+	display: block;
+	z-index: 2;
+	top: 0px;
+	background-color: #fff;
+	padding: 5px;
 }

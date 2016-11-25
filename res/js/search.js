@@ -1,53 +1,84 @@
 var search;
+var searchField;
 var content;
 var curReq = "/DB/latest/";
-var count = 25;
+var count = 6*3;
 var page = 1;
 var lastReq;
+var useInit = false;
+var isEnd = false;
+var lastQuery;
 
 $(document).ready(function()
 {
-	search = $("#search");
+	searchDiv = $("#search");
 	content = $("#contentGrid");
+	search = $("input[type=search]");
+	page = search.data("page");
+	if(page == undefined)
+		page = 1;
+	content.html("<div class=\"searching\">Loading...</div>");
 	lastReq = $.ajax(
 	{
 		url:curReq+count+"/"+page,
-		async: false,
+		async: true,
 		success: function(text)
 		{
-			content.append(text);
+			content.html(text);
 			$(".imageCard").fadeIn();
 		}
 	});
 	$(window).scroll(function() 
 	{
+		if(isEnd)
+			return;
    		if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) 
 		{
+			//console.log(page);
 			page++;
-			console.log(page);
        		lastReq = $.ajax(
 			{
 				url:curReq+count+"/"+page,
 				async: true,
 				success: function(text)
 				{
+					if(text == "" || text == null || text == undefined)
+					{
+						isEnd = true;
+						page--;
+						return;
+					}
 					content.append(text);
 					$(".imageCard").fadeIn();
+					if(lastQuery == "" || lastQuery == undefined || lastQuery == null)
+						history.pushState("RinDB", "Home", "/" + page);
+					else
+						history.pushState("RinDB \"" + lastQuery + "\"", "Search", "/"+ page + "/" + lastQuery)
 				}
 			});
 	   	}
 	});
 	//Seach Feild
-	var lastQuery;
-	search.on("propertychange change keyup input paste submit", function (event)
+	searchDiv.submit(function(e)
 	{
-		event.preventDefault();
-		var query = $("input[type=search]").val();
+		e.preventDefault();
+		history.pushState("RinDB \"" + search.val() + "\"", "Search", "/"+ page + "/" + search.val());
+	});
+	search.on("propertychange change keyup input paste submit", function (e)
+	{
+		e.preventDefault();
+		var query = search.val();
 		if(lastQuery != query)
 		{
 			lastQuery = query;
-			console.log(query);
-			page = 1;
+			isEnd = false;
+			if(e.type == "submit")
+				history.pushState("RinDB \"" + lastQuery + "\"", "Search", "/"+ page + "/" + lastQuery);
+			if(!useInit)
+			{
+				page = 1;
+			}else
+				useInit = false;
 			if(lastReq && lastReq.readyState != 4)
 				lastReq.abort();
 			if(query == "")
@@ -73,18 +104,23 @@ $(document).ready(function()
 			});
 		}
 	});
+	if(search.val() != "")
+	{
+		useInit = true;
+		search.trigger("input");
+	}
 	//Advanced Search
 	var arrow = $("#advancedSearchButton");
 	arrow.on("click", function()
 	{
-		if(search.css("height") == "45px")
+		if(searchDiv.css("height") == "45px")
 		{
-			search.css("height", "450px");
+			searchDiv.css("height", "450px");
 			arrow.css("transform", "rotate(-90deg)");
 		}
 		else
 		{
-			search.css("height", "45px");
+			searchDiv.css("height", "45px");
 			arrow.css("transform", "rotate(0deg)");
 		}
 	});
@@ -94,7 +130,18 @@ $(document).ready(function()
 
 function GetMatchingTags(query)
 {
-	var tags = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua".toLocaleLowerCase().split(" ");
+	$.ajax(
+	{
+		url:curReq+count+"/"+page,
+		async: false,
+		success: function(text)
+		{
+			if(text == "")
+				return;
+			content.html(text);
+			$(".imageCard").fadeIn();
+		}
+	});
 	var outTags;
 	for(var i = 0; i < tags.length; i++)
 	{

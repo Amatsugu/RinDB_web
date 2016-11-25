@@ -89,3 +89,19 @@ a.imageCard
 {
 	color: #fff;
 }
+
+.tag
+{
+	background-color: #222;
+	border: 1px solid #444;
+}
+
+.tag:hover
+{
+	background-color: #444;
+}
+
+#tagDescription
+{
+	background-color: #444;
+}

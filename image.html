@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="/res/css/smallerScreen.css" media="only screen and (max-width: 400px)" />
 		<link rel="stylesheet" type="text/css" href="/res/css/nightmode.css">
 		<script src="/res/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-		<script src="/res/js/search.js" type="text/javascript"></script>
+		<script src="/res/js/tagDisplay.js" type="text/javascript"></script>
 		<title>
 			リンDB | Home
 		</title>
@@ -40,9 +40,11 @@
 					<img src="@Model.imgUri">
 				</div>
 				<div id="imageDescription" class="panel">
-					Tags: 
+					<div id="tagDescription">Tag Description</div>
 					@Each.tags
-						@Current.name
+					<a class="tag">
+						<div class="tagName">@Current.name</div>
+					</a>
 					@EndEach
 				</div>
 				<div id="imageRelated" class="panel">
