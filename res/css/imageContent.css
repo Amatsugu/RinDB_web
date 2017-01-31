@@ -7,7 +7,7 @@
 {
 	height: 50px;
 	line-height: 50px;
-	font-size: 30px;
+	font-size: 28px;
 	padding: 10px;
 	color: #000;
 	overflow: hidden;
@@ -27,14 +27,14 @@
 	align-self: flex-start;
 }
 
-#imageContent #imageDescription
+#imageContent #description
 {
 	color: #000;
 	padding: 20px;
 	margin-bottom: 20px;
 }
 
-#imageContent #imageRelated
+#imageContent #related
 {
 	padding: 20px;
 	font-size: 30px;

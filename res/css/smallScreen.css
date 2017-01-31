@@ -21,3 +21,37 @@
 	font-size: 30px;
 	padding-left: 15px;
 }
+
+#imageContent #imageName
+{
+	font-size: 18px;
+	height: 40px;
+	line-height: 40px;
+	padding: 5px;
+}
+
+#imageContent #description
+{
+	font-size: 12px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+#imageContent #related
+{
+	font-size: 18px;
+	height: 40px;
+	line-height: 40px;
+	padding: 5px;
+}
+
+#User #Profile
+{
+	height: 64px;
+	width: 64px;
+}
+
+#windowArea #loginWindow
+{
+	width: 100%;
+}

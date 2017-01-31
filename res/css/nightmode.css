@@ -12,6 +12,7 @@
 body
 {
 	background-color: #222;
+	color: #FFF;
 }
 
 a.imageCard
@@ -76,7 +77,7 @@ a.imageCard
 	background-color: #444;
 }
 
-#imageContent #imageDescription
+#imageContent #description
 {
 	color: #fff;
 }
@@ -85,7 +86,7 @@ a.imageCard
 {
 	color: #fff;
 }
-#imageContent #imageRelated
+#imageContent #related
 {
 	color: #fff;
 }

@@ -4,11 +4,13 @@
 {
 	font-family: 'Roboto', sans-serif;
 }
+
 body
 {
 	background-color: #ddd;
 	margin: 0px;
 	display: block;
+	overflow-x: hidden;
 }
 
 #Header
@@ -52,6 +54,66 @@ body
 	border-left:2px solid #fff; 
 	padding-left: 15px;
 }
+
+#Header #User
+{
+	position: absolute;
+	right: 10px;
+	display: flex;
+	
+}
+
+#User #Profile
+{
+	height: 96px;
+	width: 96px;
+	background-color: #fff;
+	border: 1px solid #333;
+	margin: 5px;
+	z-index: 1;
+	opacity: .25;
+	border-radius: 50%;
+	transition: opacity .5s;
+}
+
+#User #Profile img
+{
+	height: inherit;
+	width: inherit;
+	border-radius: 50%;
+	background-color: #fff;
+}
+
+#User #menu
+{
+	display: flex;
+	z-index: 0;
+	opacity: 0;
+	transition: opacity .5s;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
+
+#User:hover > #menu
+{
+	opacity: 1;
+}
+
+#User:hover > #Profile
+{
+	opacity: 1;
+}
+
+
+#menu li
+{
+	display:block;
+	padding: 5px;
+	color: #ff0064;
+	font-size: 20px;
+}
+
 
 .Panel
 {
@@ -183,12 +245,29 @@ body
 
 .searching
 {
-	color: #fff;
+	color: #333;
 	font-size: 25px;
-	height: 100%;
 }
 
 a
 {
 	text-decoration: none;
+}
+
+
+#windowArea
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0,.2);
+	z-index: 3;
 }
